@@ -1,4 +1,4 @@
-# 5. What bells make up a given bell concert?
+# 5. What bells make up a given set of bells?
 
 SELECT ?b ?desc
 WHERE {

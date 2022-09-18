@@ -1,4 +1,4 @@
-# 3. How many bells are part of this bell concert?
+# 3. How many bells are part of this set of tuned bells?
 
 SELECT DISTINCT ?q ?d
 WHERE {

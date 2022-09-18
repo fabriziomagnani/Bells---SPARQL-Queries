@@ -1,4 +1,4 @@
-#6. What is the sound of each single bell part of a given bell concert?
+#6. What is the sound of each single bell part of a given set of bells?
 
 SELECT ?b ?desc ?url
 WHERE {
