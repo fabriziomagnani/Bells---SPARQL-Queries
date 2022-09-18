@@ -1,0 +1,12 @@
+#6. What is the sound of each single bell part of a given bell concert?
+
+SELECT ?b ?desc ?url
+WHERE {
+    ?b arco:isCulturalPropertyComponentOf <https://w3id.org/arco/resource/MusicHeritage/0700377974-0>;
+    core:description ?desc ;
+    dc:subject?o filter(str(?o)='campana') .
+    ?doc a-cd:isDocumentationOf ?b;
+    <https://w3id.org/italia/onto/SM/URL> ?url ;
+    rdf:type ?docType FILTER(?docType = a-cd:AudioDocumentation) .
+}
+

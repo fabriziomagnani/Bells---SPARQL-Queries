@@ -1,0 +1,8 @@
+# 5. What bells make up a given bell concert?
+
+SELECT ?b ?desc
+WHERE {
+	?b arco:isCulturalPropertyComponentOf <https://w3id.org/arco/resource/MusicHeritage/0700377974-0>;
+	core:description ?desc ;
+	dc:subject?o filter(str(?o)='campana')
+}

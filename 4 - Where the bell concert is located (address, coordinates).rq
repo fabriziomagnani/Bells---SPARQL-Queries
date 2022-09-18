@@ -1,0 +1,16 @@
+# 4. Where the bell concert is located (address, coordinates)?      
+PREFIX clv: <https://w3id.org/italia/onto/CLV/>
+PREFIX cis: <http://dati.beniculturali.it/cis/>
+SELECT DISTINCT ?cLabel ?fullAddress ?cLat ?cLong
+WHERE {
+    <https://w3id.org/arco/resource/MusicHeritage/0700377974-0> a-loc:hasCulturalPropertyAddress ?a ;
+    clv:hasGeometry ?g .
+    ?g a-loc:hasCoordinates ?coord .
+    ?coord a-loc:lat ?cLat ;
+    a-loc:lat ?cLong .
+    ?c cis:siteAddress ?a ;
+    rdfs:label ?cLabel .
+    ?a clv:fullAddress ?fullAddress .
+}
+
+

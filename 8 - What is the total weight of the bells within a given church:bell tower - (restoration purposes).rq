@@ -1,0 +1,14 @@
+#8. What is the total weight of the bells within a given church/bell tower? Restoration purposes
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (SUM(xsd:integer(?wVal)) AS ?total)
+WHERE {
+	?b a-cd:isLocatedIn<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0700109690> ;
+	a-dd:hasMeasurementCollection ?mc ;
+	dc:description ?desc ;
+	dc:subject ?o FILTER(str(?o)='campana') .
+	?mc a-dd:hasMeasurement ?m  .
+	?m a-dd:hasMeasurementType ?mType FILTER(?mType = a-dd:Weight) .
+	?m a-dd:hasValue ?w .
+	?w <https://w3id.org/italia/onto/MU/value> ?wVal
+}

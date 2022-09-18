@@ -1,0 +1,14 @@
+#Where this audio performance has been recorded?
+
+PREFIX clv: <https://w3id.org/italia/onto/CLV/>
+SELECT ?locTypeLabel ?cLat ?cLong
+WHERE {
+	?g clv:isGeometryFor <https://w3id.org/arco/resource/DemoEthnoAnthropologicalHeritage/0700378016-0> .
+	?g a-loc:hasLocationType ?locType ;
+	a-loc:hasCoordinates ?c .
+	?c a-loc:lat ?cLat;
+	a-loc:long ?cLong .
+	?locType rdfs:label ?locTypeLabel
+	FILTER langMatches(lang(?locTypeLabel), "it")
+}
+

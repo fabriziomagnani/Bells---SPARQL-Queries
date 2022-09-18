@@ -1,0 +1,8 @@
+# 3. How many bells are part of this bell concert?
+
+SELECT DISTINCT ?q ?d
+WHERE {
+    <https://w3id.org/arco/resource/MusicHeritage/0700377974-0> arco:numberOfComponents ?q ;
+    core:description ?d
+}
+

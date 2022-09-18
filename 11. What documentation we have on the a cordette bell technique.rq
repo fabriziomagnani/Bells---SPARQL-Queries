@@ -1,0 +1,12 @@
+#11. What documentation we have on the “a cordette” bell technique?
+
+SELECT ?t ?a ?docURL
+WHERE {
+	?t rdf:type arco:DemoEthnoAnthropologicalHeritage ;
+	a-loc:hasCulturalPropertyAddress ?l ;
+	dc:subject ?o FILTER regex(str(?o), "cordette") .
+	?l rdfs:label ?a .
+	?doc a-cd:isDocumentationOf ?t ;
+	<https://w3id.org/italia/onto/SM/URL> ?docURL .
+}
+

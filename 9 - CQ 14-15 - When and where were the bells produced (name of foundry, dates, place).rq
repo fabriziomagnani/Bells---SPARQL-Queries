@@ -1,0 +1,17 @@
+#9 - CQ 14-15: When and where were the bells produced? (name of foundry, dates, place)
+ 
+SELECT ?desc ?n ?evType ?startEndEv
+WHERE {
+?b arco:isCulturalPropertyComponentOf <https://w3id.org/arco/resource/MusicHeritage/0700377974-0> ;
+   core:description ?desc ;
+   a-cd:hasDating ?cron ;
+   a-cd:hasAuthor ?c;
+   dc:subject?o filter(str(?o)='campana') .
+   ?c l0:name ?n .
+   ?cron a-cd:hasDatingEvent ?dEv .
+   ?dEv rdfs:label ?evType ;
+            a-cd:specificTime ?evDate .
+   ?evDate rdfs:label ?startEndEv 
+   FILTER langMatches(lang(?evType), "it")
+}
+
