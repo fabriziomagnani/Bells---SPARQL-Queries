@@ -2,7 +2,7 @@
 
 SELECT (COUNT(?c) AS ?cCount)
 WHERE {
-	?c a-cd:isLocatedIn<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0700109690>;
+	?c a-cd:isLocatedIn<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0700109690> ;
 	dc:subject ?o FILTER(str(?o)='campana')
 }
 
